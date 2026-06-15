@@ -52,3 +52,12 @@ values
 ('Dr. Andrew', 1),
 ('Dr. Smith', 2),
 ('Dr. Muhammad', 3)
+
+insert into
+Patients(PatientName, Sex, Age) 
+values
+('John Doe', true, 30),
+('Jane Doe', false, 27),
+('Granny Johnson', false, 67),
+('Grandpa Bill', true, 69),
+('Andrew Billionson', true, 5);
