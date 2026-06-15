@@ -1,7 +1,7 @@
 CREATE DATABASE ass01;
 
 create table Departaments (
-	DepartmentID int primary key,
+	DepartmentID serial int primary key,
 	DepartmentName varchar(100) not null
 );
 
@@ -28,3 +28,19 @@ create table Appointment(
 	foreign key(PatientID) references Patients(PatientID),
 	foreign key(DoctorID) references Doctors(DoctorID)
 );
+
+create table Bills(
+	BillID serial primary key,
+	PatientID int,
+	Amount decimal(10,2),
+	Status varchar(50),
+	foreign key(PatientID) references Patients(PatientID)
+);
+
+insert into 
+Departaments(DepartmentName) 
+values
+('Cardiology'),
+('Neurology'),
+('Pediatria');
+/*Якщо писати не (,,), а (),(),(), то значення будуть вставлятись не в один рядок, а в кілька.*/
