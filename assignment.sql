@@ -1,7 +1,7 @@
 CREATE DATABASE ass01;
 
 create table Departaments (
-	DepartmentID serial int primary key,
+	DepartmentID serial primary key,
 	DepartmentName varchar(100) not null
 );
 
@@ -44,3 +44,11 @@ values
 ('Neurology'),
 ('Pediatria');
 /*Якщо писати не (,,), а (),(),(), то значення будуть вставлятись не в один рядок, а в кілька.*/
+
+insert into
+Doctors(DoctorName, DepartmentID)
+values
+('Dr. Alex', 1),
+('Dr. Andrew', 1),
+('Dr. Smith', 2),
+('Dr. Muhammad', 3)
