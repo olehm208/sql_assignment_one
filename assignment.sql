@@ -61,3 +61,12 @@ values
 ('Granny Johnson', false, 67),
 ('Grandpa Bill', true, 69),
 ('Andrew Billionson', true, 5);
+
+insert into
+Appointment(PatientID, DoctorID, Date, Status) 
+values
+(1, 1, '2026-03-10', 'Completed'),
+(2, 1, '2026-03-11', 'Cancelled'),
+(3, 2, '2026-03-10', 'Completed'),
+(4, 3, '2026-03-12', 'In-progress'),
+(5, 4, '2026-03-15', 'Cancelled');
