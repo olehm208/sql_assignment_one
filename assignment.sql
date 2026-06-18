@@ -70,3 +70,26 @@ values
 (3, 2, '2026-03-10', 'Completed'),
 (4, 3, '2026-03-12', 'In-progress'),
 (5, 4, '2026-03-15', 'Cancelled');
+
+select 
+  depart.departmentname,
+  count(app.appointmentid) as TotalCompletedAppointments,
+  sum(bill.amount) as TotalRevenue
+from 
+  departaments depart
+join 
+  doctors docs on depart.departmentid = docs.departmentid
+join 
+  appointment app on docs.doctorid = app.doctorid
+join 
+  patients pats on app.patientid  = pats.patientid
+join
+  bills bill on pats.patientid = bill.patientid
+where
+  pats.age > 18
+  and app.status = 'Completed'
+group by
+  depart.departmentname,
+  depart.departmentid
+order by
+  totalrevenue desc;
